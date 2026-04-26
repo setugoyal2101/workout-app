@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-class Workout_Schema(BaseModel):
+class WorkoutSchema(BaseModel):
   workout_name: str
   workout_type: str
   duration_minutes: int
@@ -8,7 +8,7 @@ class Workout_Schema(BaseModel):
   notes: str | None = None
   is_finished: bool = False
   
-class Workout_Response_Schema(BaseModel):
+class WorkoutResponseSchema(BaseModel):
   id: int
   workout_name: str
   workout_type: str

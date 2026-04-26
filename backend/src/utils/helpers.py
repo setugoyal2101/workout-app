@@ -1,9 +1,9 @@
 from fastapi import Request, HTTPException, status, Depends
-from src.user.models import UserModel
+from backend.src.user.models import UserModel
 from sqlalchemy.orm import Session
-from src.utils.settings import settings
+from backend.src.utils.settings import settings
 from jwt.exceptions import InvalidTokenError
-from src.utils.db import get_db
+from backend.src.utils.db import get_db
 import jwt
 
 def is_authenticated(request: Request, db: Session = Depends(get_db)):   

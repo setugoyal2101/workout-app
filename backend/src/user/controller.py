@@ -1,8 +1,8 @@
 from fastapi import HTTPException, status, Request
 from sqlalchemy.orm import Session
-from src.user.models import UserModel  
-from src.user.dtos import UserSchema, LoginSchema
-from src.utils.settings import settings
+from backend.src.user.models import UserModel  
+from backend.src.user.dtos import UserSchema, LoginSchema
+from backend.src.utils.settings import settings
 from pwdlib import PasswordHash
 from datetime import datetime, timedelta
 import jwt

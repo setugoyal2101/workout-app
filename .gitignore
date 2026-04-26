@@ -1,0 +1,13 @@
+# Python environment and junk
+backend/.venv/
+backend/.env
+**/__pycache__/
+*.py[cod]
+
+# Database files (if using SQLite)
+backend/*.sqlite3
+backend/*.db
+
+# OS specific files
+.DS_Store
+Thumbs.db
