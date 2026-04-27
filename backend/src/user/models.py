@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String
 from backend.src.utils.db import Base
+from sqlalchemy.orm import relationship
 
 class UserModel(Base):
   __tablename__ = "users"
@@ -7,3 +8,5 @@ class UserModel(Base):
   name = Column(String)
   email = Column(String, nullable=False, unique=True)
   hash_password = Column(String, nullable=False)
+
+  workouts = relationship("WorkoutModel", back_populates="owner")

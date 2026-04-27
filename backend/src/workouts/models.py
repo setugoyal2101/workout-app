@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
 from backend.src.utils.db import Base
+from sqlalchemy.orm import relationship
 
 class WorkoutModel(Base):
   __tablename__ = "workouts"
@@ -12,3 +13,4 @@ class WorkoutModel(Base):
   is_finished = Column(Boolean, default = False)
 
   user_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"))
+  owner = relationship("UserModel", back_populates="workouts")

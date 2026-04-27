@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker App</title>
+    <link rel="stylesheet" href="./styles.css">
+
+    <script src="./script.js"></script>
+</head>
+<body>
+    <div id="loginSection">
+        <h2>Login</h2>
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="handleLogin()">Login</button>
+    </div>
+
+    <div id="workoutSection" style="display: none;">
+        <h2>Add a Workout</h2>
+        <input type="text" id="wName" placeholder="Workout Name">
+        <input type="text" id="wType" placeholder="Workout Type">
+        <input type="number" id="wDuration" placeholder="Minutes">
+        <input type="number" id="wCalories" placeholder="Calories">
+        <input type="text" id="wNotes" placeholder="Notes">
+        <button onclick="handleAddWorkout()">Save Workout</button>
+        
+        <hr>
+
+        <h2>Your Workouts</h2>
+        <div id="workoutList" class="workout-grid"></div>
+
+        <button onclick="logOut()">Logout</button>
+    </div>
+</body>

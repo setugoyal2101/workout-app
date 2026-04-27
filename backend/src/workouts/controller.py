@@ -19,8 +19,7 @@ def add_workout(body: WorkoutSchema, db: Session, user: UserModel):
   return new_workout
 
 def get_all_workouts(db: Session, user: UserModel):
-  all_workouts: list[WorkoutModel] = db.query(WorkoutModel).filter(WorkoutModel.user_id == user.id).all()
-  return all_workouts
+  return user.workouts
 
 def get_workout(workout_id: int, db: Session, user: UserModel):
   one_workout: WorkoutModel =  db.query(WorkoutModel).filter(WorkoutModel.id == workout_id).first()
@@ -75,10 +74,6 @@ def delete_workout(workout_id: int, db: Session, user: UserModel):
 
 def is_finished(workout_finished: bool, db: Session, user: UserModel):
   workout: list[WorkoutModel] = db.query(WorkoutModel).filter(WorkoutModel.user_id == user.id, WorkoutModel.is_finished == workout_finished).all()
-
-  if not workout:
-    raise HTTPException(status_code=status.HTTP_200_OK, detail="No workouts found with the specified finished status")
-  
 
   return workout
     
